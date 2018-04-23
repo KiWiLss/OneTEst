@@ -82,4 +82,10 @@ fun main(args: Array<String>) {
     println(eval4(Sum(Num(2) ,Num(3))))
     println("------------------------")
     println(evalWithLogging(Sum(Sum(Num(2) ,Num(9)) ,Num (3))))
+
+    var a = 9
+    while (a >1){
+        println(a)
+        a--
+    }
 }
