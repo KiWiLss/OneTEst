@@ -63,11 +63,39 @@ fun main(args: Array<String>) {
 
     println("-------检查区间--------")
     //使用in检查区间成员
+    println(isLetter('q'))
+
+    println(isLetter3('o'))
+    //使用!in检查不在区间成员
+        println(isNotDigit('8'))
+
+    println("-------用when代替in和!in检查区间--------")
+
+    println(recognize('8'))
+
 
 
 }
 
+fun recognize(c: Char) =
+        when(c){
+            in '0'..'9' -> "It's a digit! "
+            //可以组合多种区间
+            in 'a'..'z',in 'A'..'Z' ->"It's a ltter!"
+            else -> "I don't know..."
+        }
 
+
+fun isLetter(c: Char) = c in 'a'..'z'|| c in 'A'..'Z'
+
+fun isLetter2(c: Char) : Boolean = c in 'a'..'z'|| c in 'A'..'Z'
+
+fun isLetter3(c: Char) : Boolean {//代码块的形式
+    println("****")
+    return c in 'a'..'z'|| c in 'A'..'Z'
+}
+
+fun isNotDigit(c: Char) = c !in '0'..'9'
 
 
 
