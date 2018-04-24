@@ -41,7 +41,7 @@ fun main(args: Array<String>) {
 }
 
 
-infix fun Any.to(other:Any) = Pair(this,other)
+//infix fun Any.to(other:Any) = Pair(this,other)
 
 //fun <K,V>mapOf(vararg values: Pair<K,V>): Map<K, V>? {
 //    return null
