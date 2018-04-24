@@ -29,11 +29,17 @@ public class FunTest {
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
-
+        System.out.println("-----------fun--------");
         //调用kotlin的扩展函数
         char a = ExtendFunKt.lastChar("Android");
         System.out.println(a);
-
+        System.out.println("-----------variable--------");
+        //调用kotlin的扩展属性
+        StringBuilder java = new StringBuilder("java");
+        char lastChar = ExtendVariableKt.getLastChar(java);
+        ExtendVariableKt.setLastChar(java,'o');
+        System.out.println(lastChar);
+        System.out.println(ExtendVariableKt.getLastChar(java));
 
     }
 
@@ -41,7 +47,7 @@ public class FunTest {
                                          ArrayList<T> list,
                                          String separaor,String prefix,String postfix){
 
-        String sb = new String();
+        String sb = "";
         sb.concat("h");
         return "";
     }

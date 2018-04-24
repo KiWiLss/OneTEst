@@ -16,10 +16,18 @@ fun String.lastChar() : Char = this.get(this.length - 1)
 //自定义扩展函数,可以省略this
 fun String.lastChar2() : Char = get(length-1)
 
+//自定义扩展属性
+val String.lastChar : Char
+get() = get(length-1)
+
+
+
 
 fun main(args: Array<String>) {
     println("Kotlin".lastChar())
     println("Android".lastChar2())
     println(mOpCount)
+
+    val lastChar = "java".lastChar
 
 }
