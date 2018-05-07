@@ -12,5 +12,7 @@
 package com.kiwi.kotlin.all_enum
 
 enum class Color {
-    RED,ORANGE,YELLOW,GREEN,BLUE,INDIFO,VIOLET
+    RED,ORANGE,YELLOW,GREEN,BLUE,INDIFO,VIOLET;
+
+
 }

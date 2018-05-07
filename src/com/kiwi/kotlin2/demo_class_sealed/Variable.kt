@@ -23,13 +23,27 @@ interface Variable{
 //主构造方法属性
 class PrivateUser(override val nickname: String) : Variable
 
-class SubscribingUser(val email :String):Variable{
+//data默认实现了toString
+data class SubscribingUser(val email :String):Variable{
     override val nickname
         //自定义getter
     get() = email.substringBefore("@")
 }
+//属性初始化
+class FacebookUser(val accountId: Int):Variable{
+//    override val nickname: String
+//        get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
+        override val nickname = getFacebookName(accountId)//通过定义的另一个函数获取属性
+}
+
+fun getFacebookName(accountId: Int) : String{
+    return ""+accountId
+}
+
+
 
 fun main(args: Array<String>) {
     val subscribingUser = SubscribingUser("kiwilss@163.com")
     println(subscribingUser.nickname)
+    println(subscribingUser)
 }

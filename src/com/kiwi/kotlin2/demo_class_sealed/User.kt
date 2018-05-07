@@ -59,11 +59,19 @@ class Secretive private constructor(){}
 class User6(val age : Int ,val name:String ="name",val nickname: String="nickname")
 
 
+class User7
+
+
+
 fun main(args: Array<String>) {
     User3(_nickname = "nickname")
     User4("nickname")
 
     User6(9, "hello")
+
+    User7()
+
+
 }
 
 
