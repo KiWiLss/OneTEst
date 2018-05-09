@@ -1,4 +1,7 @@
+import com.kiwi.kotlin.demo_fun_two.ExtendFunKt;
 import com.kiwi.kotlin.demo_local.User;
+import com.kiwi.kotlin2.demo_interface.demo_object.AKt;
+import com.kiwi.kotlin2.demo_interface.demo_object.BKt;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -34,6 +37,10 @@ public class JavaOne {
         System.out.println(checkBlank("jfeifi "));
         System.out.println(checkBlank("jfe ifi "));
         System.out.println(checkBlank("jfe ifi"));
+
+        ExtendFunKt.lastChar("jj");
+        AKt.Test(null,"test");
+
 
     }
 
