@@ -58,7 +58,7 @@ fun main(args: Array<String>) {
     println(sum(1,2))
     //或者直接使用Lambda表达式
 
-    run { println(42) }
+    //run { println(42) }
 
     val list = listOf(Person("Alice", 7), Person("Bob", 4))
     println(list.maxBy { it.age })
@@ -88,9 +88,52 @@ fun main(args: Array<String>) {
     printProbleCounts(responses)
 
     val getAge = Person::age
-    println(getAge)
+    //等同于
+    val getAge2 = { p: Person -> p.age }
+
+    println(getAge(Person("henry",99)))
+
+    //引用顶层函数
+    run  (::salute)
+
+    val action = {person:Person,message:String -> sendEmail(person,message)}
+    val nextAction = ::sendEmail
+    run { action(Person("Bob",44),"Bob") }
+    run { nextAction(Person("Bob",44),"Bob") }
+
+    println("-----------------------------")
+    val createPerson = ::Person
+    println(createPerson)
+    val createPerson1 = createPerson("规则创建", 99)
+    println(createPerson1)
+
+    //引用扩展函数
+    val kFunction1 = Person::isAdult
+    println(createPerson1.isAdult())
+    println(kFunction1(createPerson1))
+
+    println("-----------------------------")
+    //绑定引用
+    val p = Person("Dmitry", 34)
+    val personsAgeFunction = Person::age
+    println(personsAgeFunction(p))
+
+    val dmitrysAgeFuction = p::age
+    println(dmitrysAgeFuction())
+
+
+
+
 }
 
+fun Person.isAdult() =
+        age>=21
+
+fun sendEmail(person: Person,message:String)=
+    println("person->$person,message->$message")
+
+
+fun salute() = println("Salute!")
 
 fun printMessagesWithPrefix(message: Collection<String>,prefix:String){
 
