@@ -56,8 +56,10 @@ fun main(args: Array<String>) {
    println(people.filter {
        it.age ==maxAge
    })
-
-
+    println("---------------")
+    //对map过滤和变换
+    val map = mapOf(1 to "one", 2 to "two")
+    println(map.mapValues { it.value.toUpperCase() })
 
 }
 
