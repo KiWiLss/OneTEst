@@ -1,4 +1,4 @@
-package com.kiwi.kotlin3
+package com.kiwi.kotlin3.demo_fun
 
 import java.util.*
 
@@ -24,9 +24,9 @@ fun main(args: Array<String>) {
 
 }
 
-fun createRandomRectangle() : Rectangle{
+fun createRandomRectangle() : Rectangle {
     val random = Random()
-    return Rectangle(random.nextInt(),random.nextInt())
+    return Rectangle(random.nextInt(), random.nextInt())
 }
 
 class Rectangle(val height: Int ,val width: Int){

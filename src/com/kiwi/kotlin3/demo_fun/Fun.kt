@@ -1,4 +1,4 @@
-package com.kiwi.kotlin3
+package com.kiwi.kotlin3.demo_fun
 
 /**
  * Copyright (C), 2017-2018, XXX有限公司
@@ -14,9 +14,9 @@ package com.kiwi.kotlin3
 
 fun main(args: Array<String>) {
     println("Hello,world!")
-    println(max(3,5))
+    println(max(3, 5))
 
-    println(max5(4,8))
+    println(max5(4, 8))
 
     //变量
     val question = "The Ultimate Question of Life,the Universe,and Everything"
