@@ -41,7 +41,30 @@ fun main(args: Array<String>) {
 
     //中缀调用
     val map = mapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
+    //遍历map
+    for ((index,element) in map){
+        println(index)
+        println(element)
+    }
 
+    println("---------------")
+    println("12.345-6.A".split("\\.|-".toRegex()))
+    //指定多个分隔符
+    println("12.345-6.A".split(".","-"))
+
+    val path = "/Users/yole/kotlin-book/chapter.adoc"
+    parsePath(path)
+
+
+}
+
+fun parsePath(path:String){
+    val directory = path.substringBeforeLast("/")
+    val fullName = path.substringAfterLast("/")
+
+    val fileName = fullName.substringBeforeLast(".")
+    val extension = fullName.substringAfterLast(".")
+    println("Dir:$directory ,name:$fullName ,filename:$fileName ,ext:$extension")
 }
 
 
