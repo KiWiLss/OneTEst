@@ -21,9 +21,27 @@ class Button: View(){
     }
 }
 
+fun View.showOff() = println("i'm a view!")
+
+fun Button.showOff() = println("i'm a button!")
+
 fun main(args: Array<String>) {
 
     val button = Button()
     button.click()
+    button.showOff()
+
+    val view:View = Button()
+    view.click()
+    view.showOff()
+
+
+    val list = listOf("args:", *args)
+    println(list)
+
+    //中缀调用
+    val map = mapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
 
 }
+
+

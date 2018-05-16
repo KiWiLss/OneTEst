@@ -16,6 +16,31 @@ fun main(args: Array<String>) {
 
     val list = listOf(1, 4, 5)
     println(list.joinToString())
+    println(list.max())
+
+    //测试扩展属性
+    println("kotlin".lastChar)
+    val sb = StringBuilder("kotlin?")
+    sb.lastChar='!'
+    println(sb.toString())
+    println("--------------")
+    //扩展java集合的API
+    val strings:List<String> = listOf("first", "second", "fourteenth")
+    println(strings.last())
+
+
+}
+
+//扩展属性
+val String.lastChar : Char
+    get() = get(length-1)
+
+//声明一个可变扩展属性
+var StringBuilder.lastChar : Char
+    get() = get(length-1)
+    set(value) = this.setCharAt(length-1,value)
+
+class Extend{
 
 
 
