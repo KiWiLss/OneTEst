@@ -35,8 +35,6 @@ public class Person {
         list.add(4);
         String result = SetTestKt.joinToString2(list, ";", "{", "}");
         System.out.println(result);
-
         char kotlin = ExtendKt.lastChar("kotlin");
-
     }
 }
