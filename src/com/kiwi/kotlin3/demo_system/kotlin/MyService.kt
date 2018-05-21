@@ -54,6 +54,8 @@ fun main(args: Array<String>) {
     printHashCode2(42)
     //printHashCode2(null)
 
+
+
 }
 
 
