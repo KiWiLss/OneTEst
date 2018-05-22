@@ -1,5 +1,6 @@
 package com.kiwi.kotlin3.demo_system.kotlin
 
+import com.kiwi.kotlin3.java.CollectionUtils
 import java.io.BufferedReader
 import java.io.StringReader
 
@@ -88,8 +89,18 @@ fun main(args: Array<String>) {
     val target:MutableCollection<Int> = arrayListOf(1)
     copyElements(source,target)
     println(target)
+    println("--------------------")
+    val list = listOf("a", "b", "c")
+    printInUppercase(list)
 
 
+
+
+}
+
+fun printInUppercase(list: List<String>){
+    println(CollectionUtils.uppercaseAll(list))
+    println(list.first())
 }
 
 fun <T>copyElements(source: Collection<T>,
