@@ -26,4 +26,28 @@ class PersonParser : DataParser<Person> {
     }
 }
 
+fun main(args: Array<String>) {
+    for (i in args.indices){
+        println("Argument $i is: ${args[i]}")
+    }
+    val list = listOf(1, 2, 3)
+    for (i in list.indices){
+        println("$i----${list[i]}")
+    }
+
+    val letters = Array<String>(26){
+        i -> ('a'+i).toString()
+    }
+    println(letters.joinToString (""))
+    val strings = listOf("a","b","c")
+    println("%s/%s/%s".format(*strings.toTypedArray()))
+    val toTypedArray = strings.toTypedArray()
+    println(strings.toTypedArray())
+
+
+
+
+
+}
+
 
