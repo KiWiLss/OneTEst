@@ -17,11 +17,22 @@ import kotlin.reflect.KProperty
  */
 class Foo{
 
+    //利用by关联上委托对象
     var p: Type by Delegate()
 
 
 
 }
+
+fun main(args: Array<String>) {
+    val foo = Foo()
+    val oldValue = foo.p
+    //foo.p = newValue
+
+
+
+}
+
 class Delegate{
 //    operator fun getValue(){
 //    }
