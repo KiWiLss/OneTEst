@@ -33,6 +33,8 @@ fun main(args: Array<String>) {
 
 }
 
+
+
 class Delegate{
 //    operator fun getValue(){
 //    }
