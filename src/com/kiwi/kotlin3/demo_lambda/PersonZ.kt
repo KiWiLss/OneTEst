@@ -73,6 +73,17 @@ fun main(args: Array<String>) {
         }
     })
 
+    println("--------------")
+    lookForAlice5(people)
+    //在filter中使用匿名函数
+    people.filter (fun (person) : Boolean{
+        return person.age < 30
+    })
+    //使用表达式体匿名函数
+    people.filter ( fun (person) = person.age < 30)
+
+
+
 }
 
 /**
@@ -80,7 +91,10 @@ fun main(args: Array<String>) {
  */
 
 fun lookForAlice5(people: List<PersonZ>){
-
+    people.forEach (fun (person){
+        if (person.name=="Alice") return
+        println("${person.name} is not Alice")
+    })
 
 
 }
