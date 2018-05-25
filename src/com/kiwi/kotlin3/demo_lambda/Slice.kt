@@ -1,5 +1,8 @@
 package com.kiwi.kotlin3.demo_lambda
 
+import java.util.*
+import javax.xml.ws.Service
+
 /**
  * Copyright (C), 2017-2018, XXX有限公司
  * FileName: Slice
@@ -41,12 +44,67 @@ fun main(args: Array<String>) {
     val processor = Processor<String?>()
     processor.process(null)
 
+    printSum(listOf(1,2,3))
+    //set不是列表,
+    //printSum(setOf(1,2,3))
 
+    //printSum(listOf("a","b","c"))
 
+    printSum2(listOf(1,2,3))
+    println("--------------------")
+    println(isA<String>("abc"))
+    println(isA<String>(123))
 
+    val items = listOf("one", 2, "three")
+    println(items.filterIsInstance<String>())
+    println("--------------------")
+
+    val serviceImpl = ServiceLoader.load(Service::class.java)
+
+    printContents(listOf("abc","bac"))
+
+    val strings = mutableListOf("abc", "bac")
+    //addAnswer(strings)
 
 }
 
+fun addAnswer(list: MutableList<Any>){
+    list.add(42)
+}
+
+fun printContents(list: List<Any>){
+    println(list.joinToString())
+}
+
+inline fun <reified T> Iterable<*>.filterIsinstance() : List<T>{
+    val destination = mutableListOf<T>()
+    for (element in this){
+        if (element is T){
+            destination.add(element)
+        }
+    }
+    return destination
+}
+
+
+
+
+inline fun <reified T>isA(value: Any) = value is T
+
+
+/**
+ * 对已知类型检查
+ */
+fun printSum2(c: Collection<Int>){
+    if (c is List<Int>){
+        println(c.sum())
+    }
+}
+
+fun printSum(c: Collection<*>){
+    val intList = c as? List<Int> ?: throw IllegalArgumentException("List is expected")
+    println(intList.sum())
+}
 
 
 class Processor<T>{
