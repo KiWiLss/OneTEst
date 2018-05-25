@@ -28,16 +28,56 @@ fun main(args: Array<String>) {
         it !in authors
     }
 
-    println(listOf(1,2,3,4).penultimate)
+    //println(listOf(1,2,3,4).penultimate)
+    println(listOf(1,2,3).sum())
+    println("----------------")
+    println(oneHalf(3))
+    println(max("kotlin","java"))
+    println("--------------------")
+    val helloWorld = StringBuilder("Hello World")
+    ensureTrailingPeriod(helloWorld)
+    println(helloWorld)
+
+    val processor = Processor<String?>()
+    processor.process(null)
+
+
+
 
 
 }
 
 
 
+class Processor<T>{
+    fun process(value: T){
+        value?.hashCode()//value是可空的,安全调用
+    }
+}
+
+fun <T>ensureTrailingPeriod(seq: T) where T: CharSequence, T: Appendable{
+    if (!seq.endsWith('.')){
+        seq.append('.')
+    }
+}
+
+fun <T: Comparable<T>>max(first: T, second: T) : T{
+    return if (first > second) first else second
+}
+
+fun <T : Number>oneHalf(value: T) : Double{
+    return value.toDouble()/2
+}
+
+//fun <T : Number>List<T>.sum() : T{
+//    return this[0]
+//}
+
+
+
 //使用在扩展属性上
-val <T>List<T>.penultimate: T
-get() = this[size-2]
+//val <T>List<T>.penultimate: T
+//get() = this[size-2]
 
 //
 //fun <T>List<T>.filter(predicate: (T) -> Boolean) : List<T>{

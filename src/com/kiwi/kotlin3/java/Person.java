@@ -4,6 +4,7 @@ import com.kiwi.kotlin3.demo_fun_two.ExtendKt;
 import com.kiwi.kotlin3.demo_fun_two.SetTestKt;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Copyright (C), 2017-2018, XXX有限公司
@@ -42,4 +43,11 @@ public class Person {
 
 
     }
+
+    <T extends Number> T sum(List<T> list){
+        return null;
+    }
 }
+
+
+
