@@ -66,6 +66,16 @@ fun main(args: Array<String>) {
     val strings = mutableListOf("abc", "bac")
     //addAnswer(strings)
 
+
+
+}
+
+fun test(i: Int){
+    val n: Number = i
+    fun f(s: String){
+    }
+
+
 }
 
 fun addAnswer(list: MutableList<Any>){
