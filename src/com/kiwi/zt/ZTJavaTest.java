@@ -18,8 +18,13 @@ import sun.tools.jconsole.inspector.Utils;
 public class ZTJavaTest {
     public static void main(String[] args) {
         //调用kotlin方法
-        UtilsKt.printlnMain();
+        //UtilsKt.printlnMain();
 
+
+        Thread thread = new Thread(()->{
+            System.out.println("run");
+        });
+        thread.start();
 
 
     }
