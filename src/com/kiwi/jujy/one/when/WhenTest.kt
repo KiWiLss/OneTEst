@@ -1,7 +1,7 @@
 package com.kiwi.jujy.one.`when`
 
 import com.kiwi.jujy.one.enum_kotlin.Color
-import com.kiwi.jujy.one.enum_kotlin.Color2
+import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception
 
 
 /**
@@ -40,3 +40,23 @@ fun getWarmth(color: Color) =
             Color.GREEN,Color.RED -> "green red"
             else -> "no color"
         }
+
+//使用任意对象
+fun mix(c1: Color, c2:Color) =
+        when(setOf<Color>(c1,c2)){
+            setOf(Color.RED,Color.YELLOW) -> Color.RED
+            setOf(Color.YELLOW,Color.RED) -> Color.YELLOW
+            else -> throw Exception("Dirty color")
+        }
+
+//使用不带参数的when
+fun mixOptiomized(c1: Color, c2: Color) =
+        when{
+            (c1==Color.RED&&c2 == Color.YELLOW) ||
+                    (c1 == Color.YELLOW && c2 == Color.RED) ->
+                Color.ORANGE
+
+            else -> throw Exception("Dirty color")
+        }
+
+

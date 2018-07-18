@@ -25,6 +25,11 @@ fun main(args: Array<String>) {
 
     println(createRandomRectangle().isSquare)
 
+
+    val set = setOf(2, 3)
+    set.map {
+        println(it)
+    }
 }
 
 
