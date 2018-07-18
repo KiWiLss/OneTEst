@@ -4,6 +4,9 @@ package com.kiwi.jujy.one
  * kotlin可以导入函数,或是类,允许使用import关键字导入任何种类的声明
  */
 import com.kiwi.jujy.one.class_attribute.*
+import com.kiwi.jujy.two.lastChar
+//修改其他包的扩展函数的方法名,解决命名冲突问题
+import com.kiwi.jujy.two.lastChar2 as last
 
 /**
  * Copyright (C), 2017-2018, XXX有限公司
@@ -30,6 +33,12 @@ fun main(args: Array<String>) {
     set.map {
         println(it)
     }
+
+    println("kotlin".lastChar())
+
+    println("java".last())
+
+
 }
 
 
