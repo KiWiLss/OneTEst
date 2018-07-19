@@ -50,6 +50,10 @@ fun Collection<String>.join(separator: String = ",",
                             postfix: String = "]")
         = joinToString(separator,prefix,postfix)
 
+
+infix fun Any.to(other: Any) = Pair(this,other)
+
+
 fun main(args: Array<String>) {
 
     println("java".lastChar())
@@ -59,4 +63,44 @@ fun main(args: Array<String>) {
     val stringList = listOf("1", "4", "34")
     println(stringList.join())
 
+    val argsList = listOf("args:", *args)
+    println(argsList)
+
+    val map = mapOf(1 to "one", 7 to "seven", 53 to "fifty-three")
+    mapOf(1 to ('a'), 2 to ('b'))
+
+   val (number, name) = 1 to "one"
+
+    println("------------")
+
+    println("12.345-6.A".split("\\.|-".toRegex()))
+    println("12.345-6.A".split("[.-]".toRegex()))
+
+    println("12.345-6.a".split(".","-"))
+
+    println("-----------")
+    parsePath("/Users/yole/kotlin-book/chapter.adoc")
+    parsePath2("/Users/yole/kotlin-book/chapter.adoc")
 }
+
+
+fun parsePath(path: String){
+    val directory = path.substringBeforeLast("/")
+    val fullName = path.substringAfterLast("/")
+
+    val filename = fullName.substringBeforeLast(".")
+    val extension = fullName.substringAfterLast(".")
+
+    println("Dir:$directory,name: $filename ,ext: $extension")
+}
+//同上,使用正则表达式
+
+fun parsePath2(path: String){
+    val regex = """(.+)/(.+)\.(.+)""".toRegex()
+    val matches = regex.matchEntire(path)
+    if (matches!=null){
+        val (directory, filename, extension) = matches.destructured
+        println("dir-$directory, filename-$filename, extension-$extension")
+    }
+}
+
