@@ -79,6 +79,17 @@ class PersonJ(val name: String){
 //
 //}
 
+class PersonJJ(val firstName: String, val lastName: String){
+    //声明一个空的伴生对象
+    companion object {
+
+    }
+}
+
+//声明一个扩展函数
+fun PersonJJ.Companion.fromJSON(json: String) : PersonJJ{
+    return PersonJJ("first","last")
+}
 
 fun main(args: Array<String>) {
     A.bar()
@@ -91,6 +102,7 @@ fun main(args: Array<String>) {
     println("----------------")
     val personK = PersonK.loader.fromJson("kotlin")
     println(personK.name)
-
-
+    println("----------------")
+    println(PersonJJ.fromJSON("").firstName)
 }
+

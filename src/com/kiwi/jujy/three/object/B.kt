@@ -26,3 +26,18 @@ object B {
 
     }
 }
+
+/**
+ * 单利模式
+ */
+class SingleHolder private constructor(){
+    companion object {
+        fun get() : SingleHolder{
+            return Holder.instance
+        }
+    }
+    private object Holder{
+        val instance = SingleHolder()
+    }
+}
+
