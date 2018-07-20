@@ -61,9 +61,11 @@ fun main(args: Array<String>) {
     println(file.isIndiseHiddenDirectory())
 
     println("-----------------")
-    Button().setOnClickListener({view:View -> {
-        println("click")
-    }})
+    val v = { v:View -> println("book click")}
+    Button().setOnClickListener{v:View -> println("book click")}
+
+
+
 }
 
 fun File.isIndiseHiddenDirectory() =
