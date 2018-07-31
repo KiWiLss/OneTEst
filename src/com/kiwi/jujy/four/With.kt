@@ -54,7 +54,7 @@ fun alphabet3() = with(StringBuilder()){
     //this.toString()
 }
 
-public fun StringBuilder.toString() : String{
+ fun StringBuilder.toString() : String{
     return "hello"
 }
 
