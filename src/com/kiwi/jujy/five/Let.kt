@@ -129,6 +129,35 @@ fun main(args: Array<String>) {
     })
     val i = 1
     println("${('a' + i)}")
+
+    println("-----------")
+    val strings = listOf("a", "b", "c")
+    println("%s/%s/%s".format(*strings.toTypedArray()))
+
+    println("------------")
+    val fiveZeros = IntArray(5)
+    val fiveZerosToo = intArrayOf(0, 0, 0, 0, 0)
+    println(fiveZeros.joinToString())
+
+    val squares = IntArray(5){
+        (it + 1) * (it + 1)
+    }
+
+    println(squares.joinToString ())
+
+    squares.forEachIndexed{index, element->
+        println("argument $index is: $element")
+    }
+
+    squares.forEach {
+        println(it)
+    }
+    println("----------list-----------")
+
+    strings.forEach {
+        println(it)
+    }
+
 }
 
 fun <T>copyELements (source: Collection<T>,target: MutableCollection<T>){
