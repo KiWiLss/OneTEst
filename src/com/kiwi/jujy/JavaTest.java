@@ -24,26 +24,37 @@ public class JavaTest {
      * @param args
      */
     public static void main(String[] args) {
-        //java中使用person类
-        Person bob = new Person("bob", true);
-        System.out.println(bob.getName());
-        System.out.println(bob.isMarried());
+//        //java中使用person类
+//        Person bob = new Person("bob", true);
+//        System.out.println(bob.getName());
+//        System.out.println(bob.isMarried());
+//
+//        //调用kotlin的扩展属性
+//        char kotlin = ViewKt.getLastChar(new StringBuilder("kotlin"));
+//        System.out.println(kotlin);
+//
+//
+//        HashSet<Integer> set = new HashSet<>();
+//        set.add(2);
+//        set.add(5);
+//        set.add(3);
+//        Iterator<Integer> iterator = set.iterator();
+//        while (iterator.hasNext()){
+//            System.out.println(iterator.next());
+//        }
 
-        //调用kotlin的扩展属性
-        char kotlin = ViewKt.getLastChar(new StringBuilder("kotlin"));
-        System.out.println(kotlin);
+        returnTest();
+    }
 
-
-        HashSet<Integer> set = new HashSet<>();
-        set.add(2);
-        set.add(5);
-        set.add(3);
-        Iterator<Integer> iterator = set.iterator();
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
+    public static void returnTest(){
+        int a = 5;
+        for (int i = 0; i < 10; i++) {
+            if (i == a){
+                System.out.println("break");
+                break;
+            }
+            System.out.println(i);
         }
-
-
     }
 
 
