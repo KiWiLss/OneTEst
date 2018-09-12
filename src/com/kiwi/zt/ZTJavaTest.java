@@ -28,4 +28,8 @@ public class ZTJavaTest {
 
 
     }
+
+    public static void fun(){
+        System.out.println("fun");
+    }
 }
