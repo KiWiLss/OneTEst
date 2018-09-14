@@ -38,7 +38,8 @@ fun main(args: Array<String>) {
 
 }
 
-
+val age = 18
+var nameN : String? = null
 
 
 fun funtion(string: String){
